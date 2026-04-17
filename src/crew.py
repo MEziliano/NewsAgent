@@ -10,6 +10,17 @@ class NewsCrew:
 
     def run(self):
         # Initialize agents
+        """
+        Run the NewsCrew.
+
+        This method initializes the agents, tasks, and crew. Then, it runs the crew
+        sequentially, with the scanner agent scanning the given RSS feeds, the analyst
+        agent analyzing the found news items, and the writer agent writing a newsletter
+        based on the analysis.
+
+        Returns:
+            The result of the crew's execution.
+        """
         scanner = self.agents.scanner_agent()
         analyst = self.agents.analyst_agent()
         writer = self.agents.writer_agent()

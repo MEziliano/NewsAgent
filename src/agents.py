@@ -19,11 +19,28 @@ class DuckDuckGoTool(BaseTool):
 
 class NewsAgents:
     def __init__(self, model_name="llama3"):
+        """
+        Initialize the NewsAgents object.
+
+        Args:
+            model_name (str, optional): The name of the model to use for the LLM. Defaults to "llama3".
+
+        Initializes the RSS Tool, Search Tool, and LLM model with the given model name.
+        """
         self.rss_tool = RSSTool()
         self.search_tool = DuckDuckGoTool()
         self.llm = LLM(model=f"openai/{model_name}", base_url="http://localhost:11434/v1")
 
     def scanner_agent(self):
+        """
+        Return an Agent object representing the scanner agent.
+
+        This agent is responsible for identifying the most relevant news from RSS feeds and other sources.
+        It is given the RSS Tool and the LLM model, and is allowed to be verbose and does not allow delegation.
+
+        Returns:
+            Agent: An Agent object representing the scanner agent.
+        """
         return Agent(
             role="News Scanner",
             goal="Identify the most relevant news from RSS feeds and other sources.",
@@ -35,6 +52,15 @@ class NewsAgents:
         )
 
     def analyst_agent(self):
+        """
+        Return an Agent object representing the analyst agent.
+
+        This agent is responsible for providing context and evaluating the impact of the news found.
+        It is given the Search Tool and the LLM model, and is allowed to be verbose and allows delegation.
+
+        Returns:
+            Agent: An Agent object representing the analyst agent.
+        """
         return Agent(
             role="Market Analyst",
             goal="Provide context and evaluate the impact of the news found.",
@@ -46,6 +72,15 @@ class NewsAgents:
         )
 
     def writer_agent(self):
+        """
+        Return an Agent object representing the writer agent.
+
+        This agent is responsible for summarizing the findings and creating a concise and professional newsletter.
+        It is given the LLM model, and is allowed to be verbose and does not allow delegation.
+
+        Returns:
+            Agent: An Agent object representing the writer agent.
+        """
         return Agent(
             role="Senior Editor",
             goal="Create a concise and professional newsletter summarizing the findings.",
