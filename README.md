@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # NewsAgent 📰🤖
 
 O **NewsAgent** é um sistema inteligente de curadoria de notícias automatizado, construído com o framework **CrewAI**. Ele utiliza múltiplos agentes de IA para monitorar feeds RSS, analisar o contexto das notícias e gerar uma newsletter profissional e elegante em formato HTML.
@@ -227,5 +226,4 @@ NewsAgent/
 Este projeto está sob a licença MIT. Veja o arquivo para mais detalhes.
 
 ---
-*Desenvolvido com ❤️ por Antigravity AI Assistant.*
->>>>>>> 6c8115b (test)
+*Desenvolvido com ❤️ por Murilo Eziliano.*
