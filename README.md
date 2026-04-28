@@ -111,4 +111,4 @@ NewsAgent/
 Este projeto está sob a licença MIT. Veja o arquivo para mais detalhes.
 
 ---
-*Desenvolvido com ❤️ por Antigravity AI Assistant.*
+*Desenvolvido com ❤️ por Murilo Eziliano.*
